@@ -2,14 +2,14 @@ package ec.edu.itsqmet.factory;
 
 public class CarFactory {
 	
-	public static Car newCar(String carType) {
-		if (carType.equals("Nissan")) {
+	public static Car newCar(CarType carType) {
+		if (carType.compareTo(NISSAN)) {
 			return new Nissan();
 		} 
-		if (carType.equals("Toyota")) {
+		if (toyota.equals("Toyota")) {
 			return new Toyota();
 		}
-		if (carType.equals("Honda")) {
+		if (honda.equals("Honda")) {
 			return new Honda();
 		}
 		return null;

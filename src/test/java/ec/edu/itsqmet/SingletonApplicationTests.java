@@ -8,8 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import ec.edu.itsqmet.factory.Car;
 import ec.edu.itsqmet.factory.CarFactory;
-import ec.edu.itsqmet.factory.Nissan;
-import ec.edu.itsqmet.factory.Toyota;
 import ec.edu.itsqmet.repository.ICountriesRepository;
 import ec.edu.itsqmet.singleton.CountrySingleton;
 
@@ -42,14 +40,15 @@ class SingletonApplicationTests {
 	@Test
 	void testingFactory() {
 		//Car car = new Car(); no se puede instanciar las clases abstractas
-		Car ns80 = new CarFactory.newCar("Nissan");
+		//en los métodos estáticos no se necesita instanciar para poder utilizarlo
+		//CarFactory cf = new CarFactory();
+		Car ns80 = CarFactory.newCar("Nissan");
 		ns80.setYear(1980);
 		System.out.println("Nissan de "+ns80.getYear()+" " + ns80.maxSpeed());
 		
-		Car ty91 = new CarFactory.newCar("Toyota");
+		Car ty91 = CarFactory.newCar("Toyota");
 		ty91.setYear(1991);
 		System.out.println("Nissan de "+ty91.getYear()+" " + ty91.maxSpeed());
-		
 	}
 
 }
