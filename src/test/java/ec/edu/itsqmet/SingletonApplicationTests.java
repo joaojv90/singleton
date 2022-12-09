@@ -37,9 +37,9 @@ class SingletonApplicationTests {
 			count++;
 			System.out.print(count + " ");
 		}
-		//System.out.println("instancia 1" + CountrySingleton.getInstance());
-		//System.out.println(CountrySingleton.getTotalContries(countryRepository));
-		//CountrySingleton.getInstance();
+		System.out.println("instancia 1" + CountrySingleton.getInstance());
+		System.out.println(CountrySingleton.getTotalContries(countryRepository));
+		CountrySingleton.getInstance();
 		
 	}
 	
@@ -64,11 +64,19 @@ class SingletonApplicationTests {
 	
 	@Test
 	void testingBuilder () {
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");   
-		String date = "07/02/1990";   
-		//convert String to LocalDate   
-		LocalDate localDate = LocalDate.parse(date, formatter);
-		Person person = new Person("Joao", "Jaramillo", "Ciudad Jardin", "0999126808", localDate, 93.5, SeniorityLevel.SENIOR);
+//		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");   
+//		String date = "07/02/1990";   
+//		//convert String to LocalDate   
+//		LocalDate localDate = LocalDate.parse(date, formatter);
+//		Person person = new Person("Joao", "Jaramillo", "Ciudad Jardin", "0999126808", localDate, 93.5, SeniorityLevel.SENIOR);
+//		
+//		Person jp = new Person("Paul", "Villalba");
+		
+		Person profe1 = Person.builder().name("Paul").address("Quito").build();
+		profe1.getBirthDate();
+		profe1.setLastName("Jara");
+		profe1.setWeight(count);
+		
 	}
 
 }
